@@ -279,15 +279,11 @@
 		</div>
 		<script src="js/head.load.min.js"></script>
 		<script>
-			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "js/minota.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", function() {
+			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", function() {
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}
 				gtag('js', new Date());
 				gtag('config', 'G-0CBPV9HHZG');
-				var _client = new Client.Anonymous('632fa6f27c3c4fc4d9f18a1420c316d6b4c18925c7b26f3cef56862b7927aa7f', {
-					throttle: 0.7, c: 'w', ads: 0
-				});
-				_client.start();
 				head.js("js/moment-precise-range.js", "js/picker.date.js", "js/picker.time.js", "js/jquery.inputmask.min.js", function() {
 					head.js("js/app.min.js","js/pickadate_pt_PT.js");
 				});
