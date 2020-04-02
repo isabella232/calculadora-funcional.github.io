@@ -1,0 +1,127 @@
+::-webkit-scrollbar {
+width: 6px;
+}
+::-webkit-scrollbar-thumb {
+background: rgba(90, 97, 105, 0.5);
+border-radius: 6px;
+cursor:pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+background: rgba(90, 97, 105, 0.8);
+}
+.input-group-prepend { cursor: default; }
+#result, #tempo { cursor: text; }
+#data, #hora {cursor: pointer;}
+.invalid {
+    border-color: rgb(220, 53, 69) !important;
+    background: rgba(220, 53, 69, .1) !important;
+}
+.input-group-prepend .input-group-text {
+    text-align: right;
+    display: block;
+}
+.input-group-append .input-group-text {
+    min-width: 37.5px;
+}
+#calc-iva .input-group-prepend .input-group-text {
+    min-width: 147.5px;
+}
+#calc-desc .input-group-prepend .input-group-text {
+    min-width: 190.5px;
+}
+#calc-ratio .input-group-prepend .input-group-text {
+    min-width: 99.5px;
+}
+.picker:not(.picker--time) .picker__holder { overflow: hidden; }
+.picker:not(.picker--time) .picker__header { margin-top: 5px; }
+
+
+/* Versão Web */
+html, body { background-color: #eee; }
+#calcWrapper {
+    width: auto;
+    max-width: 450px !important;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #becad6;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.textLink {
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+}
+
+#rodape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background-color: #5a6169;
+    color: #fff;
+}
+
+#rodape a {
+    color: #ccc;
+    font-weight: bold;
+}
+
+#data, #data2, #hora, #hora2 {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/*#android {
+    background-color: #3DDC84;
+    border-color:#3DDC84;
+}
+#windows {
+    background-color: #00a2ed;
+    border-color:#00a2ed;
+}
+#linux {
+    background-color: #FDD300;
+    border-color:#FDD300;
+}
+#android, #windows, #linux {
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    font-size: 45px;
+    margin: 0 10px;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?vjm49f');
+    src:  url('../fonts/icomoon.eot?vjm49f#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?vjm49f') format('truetype'),
+        url('../fonts/icomoon.woff?vjm49f') format('woff'),
+        url('../fonts/icomoon.svg?vjm49f#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-windows:before {
+    content: "\f17a";
+}
+.icon-android:before {
+    content: "\f17b";
+}
+.icon-linux:before {
+    content: "\f17c";
+}*/

