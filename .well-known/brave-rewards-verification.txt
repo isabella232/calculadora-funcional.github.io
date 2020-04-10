@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: calculadora-funcional.github.io
+Token: 3161aed187ab6411bd958863c09a38b4b1270e565d95113c5bc81337ed5ee582
