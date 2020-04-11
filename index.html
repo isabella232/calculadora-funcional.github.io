@@ -23,7 +23,7 @@
 		<meta property="og:description" content="Ferramenta online para vários tipos de cálculo, tais como: Regra de três simples, IVA, Descontos, proporção de imagem, entre outros." />
 		<meta property="og:site_name" content="Calculadora Funcional" />
 		<meta name="google-site-verification" content="YUVJPJ_2rMCfW6r7ZoYu2swnH67GzYZvF5D2daO28IA" />
-		<link rel="stylesheet" href="css/all.min.css">
+		<link rel="stylesheet" href="css/all.min.css?v=1.1">
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -146,7 +146,7 @@
 								<div class="col-12 mt-3">
 									<div class="input-group">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="descValorLabel">Valor Desconto</span>
+											<span class="input-group-text" id="descValorLabel">Valor Desc.</span>
 										</div>
 										<input id="descValor" type="text" class="form-control valDesc text-right" aria-describedby="descValorLabel">
 										<div class="input-group-append">
@@ -157,7 +157,7 @@
 								<div class="col-12 mt-3">
 									<div class="input-group">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="descPercLabel">Percentagem Desconto</span>
+											<span class="input-group-text" id="descPercLabel">Percentagem Desc.</span>
 										</div>
 										<input id="descPerc" type="text" class="form-control valDesc text-right" aria-describedby="descPercLabel">
 										<div class="input-group-append">
@@ -168,7 +168,7 @@
 								<div class="col-12 mt-3">
 									<div class="input-group">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="descFinalLabel">Preço c/ Desconto</span>
+											<span class="input-group-text" id="descFinalLabel">Preço c/ Desc.</span>
 										</div>
 										<input id="descFinal" type="text" class="form-control valDesc text-right" aria-describedby="descFinalLabel">
 										<div class="input-group-append">
@@ -238,36 +238,44 @@
 										<input id="tempo" type="text" readonly="readonly" class="form-control text-center">
 									</div>
 								</div>
-								<div class="col-7 mt-3">
-									<div class="input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="dataLabel">Data</span>
+								<div class="col-12 mt-3">
+									<div class="timeWrapper">
+										<div class="dataPercent">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="dataLabel">Data</span>
+												</div>
+												<input id="data" type="text" readonly="readonly" class="form-control" aria-describedby="dataLabel">
+											</div>
 										</div>
-										<input id="data" type="text" readonly="readonly" class="form-control" aria-describedby="dataLabel">
+										<div class="horaPercent">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="horaLabel">Hora</span>
+												</div>
+												<input id="hora" type="text" readonly="readonly" class="form-control" aria-describedby="horaLabel">
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="col-5 mt-3">
-									<div class="input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="horaLabel">Hora</span>
+								<div class="col-12 mt-3">
+									<div class="timeWrapper">
+										<div class="dataPercent">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="data2Label">Data</span>
+												</div>
+												<input id="data2" type="text" readonly="readonly" class="form-control" aria-describedby="data2Label">
+											</div>
 										</div>
-										<input id="hora" type="text" readonly="readonly" class="form-control" aria-describedby="horaLabel">
-									</div>
-								</div>
-								<div class="col-7 mt-3">
-									<div class="input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="data2Label">Data</span>
+										<div class="horaPercent">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="hora2Label">Hora</span>
+												</div>
+												<input id="hora2" type="text" readonly="readonly" class="form-control" aria-describedby="hora2Label">
+											</div>
 										</div>
-										<input id="data2" type="text" readonly="readonly" class="form-control" aria-describedby="data2Label">
-									</div>
-								</div>
-								<div class="col-5 mt-3">
-									<div class="input-group">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="hora2Label">Hora</span>
-										</div>
-										<input id="hora2" type="text" readonly="readonly" class="form-control" aria-describedby="hora2Label">
 									</div>
 								</div>
 							</div>
