@@ -59,7 +59,7 @@ $(function() {
         else if(form.find(".valid").length > 3) form.find(".valRTS").last().val("").removeClass("valid").prop("readonly", true);
     }
     $(".valRTS").inputmask( {
-        regex: "[1-9]{1}[0-9]*[\.]?[0-9]*",
+        regex: "[1-9]{1}[0-9]*[\,]?[0-9]*",
         "placeholder": " ",
         "oncomplete": function() {
             $(this).addClass("valid");
@@ -79,10 +79,10 @@ $(function() {
             var vazio = este.find(".valRTS:not(.valid)").attr("id");
             var valor = 0.00;
             switch(vazio) {
-                case 'valor1': valor = (parseFloat(este.find("#valor2").val()) * parseFloat(este.find("#valor3").val())) / parseFloat(este.find("#valor4").val());break;
-                case 'valor2': valor = (parseFloat(este.find("#valor1").val()) * parseFloat(este.find("#valor4").val())) / parseFloat(este.find("#valor3").val());break;
-                case 'valor3': valor = (parseFloat(este.find("#valor1").val()) * parseFloat(este.find("#valor4").val())) / parseFloat(este.find("#valor2").val());break;
-                case 'valor4': valor = (parseFloat(este.find("#valor2").val()) * parseFloat(este.find("#valor3").val())) / parseFloat(este.find("#valor1").val());break;
+                case 'valor1': valor = (parseFloat(este.find("#valor2").val().replace(",", ".")) * parseFloat(este.find("#valor3").val().replace(",", "."))) / parseFloat(este.find("#valor4").val().replace(",", "."));break;
+                case 'valor2': valor = (parseFloat(este.find("#valor1").val().replace(",", ".")) * parseFloat(este.find("#valor4").val().replace(",", "."))) / parseFloat(este.find("#valor3").val().replace(",", "."));break;
+                case 'valor3': valor = (parseFloat(este.find("#valor1").val().replace(",", ".")) * parseFloat(este.find("#valor4").val().replace(",", "."))) / parseFloat(este.find("#valor2").val().replace(",", "."));break;
+                case 'valor4': valor = (parseFloat(este.find("#valor2").val().replace(",", ".")) * parseFloat(este.find("#valor3").val().replace(",", "."))) / parseFloat(este.find("#valor1").val().replace(",", "."));break;
             }
             var resultado = new Intl.NumberFormat('pt-PT', { minimumFractionDigits: 2 }).format(valor).toString();
             if(resultado.slice(-3) == ",00") resultado = resultado.replace(",00", "");

