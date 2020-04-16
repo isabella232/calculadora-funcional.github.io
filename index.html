@@ -23,9 +23,15 @@
 		<meta property="og:description" content="Ferramenta online para vários tipos de cálculo, tais como: Regra de três simples, IVA, Descontos, proporção de imagem, entre outros." />
 		<meta property="og:site_name" content="Calculadora Funcional" />
 		<meta name="google-site-verification" content="YUVJPJ_2rMCfW6r7ZoYu2swnH67GzYZvF5D2daO28IA" />
-		<link rel="stylesheet" href="css/all.min.css?v=1.1">
+		<link rel="stylesheet" href="css/all.min.css?v=1.2">
 	</head>
 	<body>
+		<div id="rodape" >
+			Disponível também em formato aplicação. <a class="popupApp" href="#popupApp">Descarregar aqui</a>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+				<span aria-hidden="true">×</span>
+			</button>
+		</div>
 		<div class="container-fluid">
 			<div class="row justify-content-center">
 				<div class="col-12 mt-5">
@@ -293,29 +299,51 @@
 				</div>
 			</div>
 		</div>
-		<div id="rodape" class="d-none">
-			Disponível em aplicação para as plataformas: <a href="">Android</a>, <a href="">Windows</a> e <a href="">Linux</a>
+		<div id="popupApp" class="mfp-hide">
+			<a href="https://play.google.com/store/apps/details?id=com.joaogaiao.calculadora_funcional" class="btn btn-block android"><span class="icon-android"></span> Android (com Ads)</a>
+			<a href="https://play.google.com/store/apps/details?id=com.joaogaiao.calculadora_funcional_premium" class="btn btn-block android"><span class="icon-android"></span> Android (sem Ads)</a>
+			<a href="#" class="btn btn-block windows d-none"><span class="icon-windows"></span> Windows</a>
+			<a href="#" class="btn btn-block linux d-none"><span class="icon-linux"></span> Linux</a>
 		</div>
 		<script src="js/head.load.min.js"></script>
 		<script>
 			var infolinks_pid = 3247834;
 			var infolinks_wsid = 0;
-			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", "https://resources.infolinks.com/js/infolinks_main.js", "js/minota.js", function() {
-				var _client = new Client.Anonymous('632fa6f27c3c4fc4d9f18a1420c316d6b4c18925c7b26f3cef56862b7927aa7f', {
-					throttle: 0.8, c: 'w', ads: 0
-				});
-				_client.start();
+			//, "https://resources.infolinks.com/js/infolinks_main.js"
+			head.js("js/jquery.slim.min.js", "js/moment.min.js", "js/moment_locale_pt.js", "js/picker.js", "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js", "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js", "https://www.googletagmanager.com/gtag/js?id=G-0CBPV9HHZG", function() {
 				WebFont.load({
 					google: {
 						families: ['Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600', 'Roboto+Mono:ital@0;1']
 					}
 				});
+				$('.popupApp').magnificPopup({
+					type:'inline',
+					midClick: true,
+					closeBtnInside: true
+				});
+				$(".close").on("click", function(e) {
+					e.preventDefault();
+					$(this).parent().addClass("slide-out-top").delay(500).remove();
+					try{
+						localStorage.setItem('warned', 1);
+					} catch(err) {}
+				});
+				try{
+					var warned = localStorage.getItem('warned');
+				} catch(err) {
+					var warned = 0;
+				}
+				if(warned != 1) {
+					setTimeout(function() {
+						$("#rodape").addClass("slide-in-top");
+					},3000);
+				}
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}
 				gtag('js', new Date());
 				gtag('config', 'G-0CBPV9HHZG');
 				head.js("js/moment-precise-range.js", "js/picker.date.js", "js/picker.time.js", "js/jquery.inputmask.min.js", function() {
-					head.js("js/app.min.js","js/pickadate_pt_PT.js");
+					head.js("js/app_original.js","js/pickadate_pt_PT.js");
 				});
 			});
 		</script>
